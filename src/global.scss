@@ -1,0 +1,139 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+/* =============================
+   PALETA DE CORES PERSONALIZADA
+============================= */
+:root {
+  --cor-primaria: #3b82f6;
+  --cor-primaria-ativa: #2563eb;
+  --cor-fundo: #f0f4f8;
+  --cor-titulo: #1e293b;
+  --cor-subtitulo: #475569;
+  --cor-texto: #64748b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-fundo: #0f172a;
+    --cor-titulo: #e0e7ff;
+    --cor-subtitulo: #cbd5e1;
+    --cor-texto: #94a3b8;
+    --cor-primaria: #60a5fa;
+    --cor-primaria-ativa: #3b82f6;
+  }
+}
+
+/* =============================
+   CLASSES DE TEXTO E LAYOUT
+============================= */
+.container {
+  max-width: 420px;
+  padding: 24px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.brand {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--cor-titulo);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--cor-subtitulo);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 15px;
+  color: var(--cor-texto);
+  margin-bottom: 32px;
+  line-height: 1.6;
+  padding: 0 12px;
+}
+
+ion-button {
+  --background: var(--cor-primaria);
+  --background-activated: var(--cor-primaria-ativa);
+  --color: #fff;
+  font-weight: 600;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.alert-card {
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.alert-card.sucesso {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #34d399;
+}
+
+.alert-card.erro {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #f87171;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

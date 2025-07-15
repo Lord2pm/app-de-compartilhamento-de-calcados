@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <h1 class="brand">Meio Par 👟</h1>
+    <h2 class="subtitle">Crie sua conta</h2>
+
+    <div *ngIf="mensagem" [ngClass]="classeMensagem" class="alert-card">
+      {{ mensagem }}
+    </div>
+
+    <form (ngSubmit)="cadastrar()" #cadastroForm="ngForm">
+      <ion-item lines="none">
+        <ion-input
+          placeholder="Nome completo"
+          [(ngModel)]="nome"
+          name="nome"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input
+          type="email"
+          placeholder="E-mail"
+          [(ngModel)]="email"
+          name="email"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input
+          type="password"
+          placeholder="Senha"
+          [(ngModel)]="senha"
+          name="senha"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-select
+          placeholder="Lado amputado"
+          [(ngModel)]="ladoAmputado"
+          name="ladoAmputado"
+          required
+        >
+          <ion-select-option value="esquerdo">Esquerdo</ion-select-option>
+          <ion-select-option value="direito">Direito</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-button
+        expand="block"
+        shape="round"
+        type="submit"
+        [disabled]="!cadastroForm.form.valid"
+      >
+        Cadastrar
+      </ion-button>
+    </form>
+
+    <p class="description small">
+      Já tem conta?
+      <a (click)="irParaLogin()">Entrar</a>
+    </p>
+  </div>
+</ion-content>

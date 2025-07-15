@@ -1,0 +1,30 @@
+.page-header {
+  text-align: center;
+  margin-bottom: 24px;
+
+  .brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+.empty {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.shoe-card {
+  border-radius: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+ion-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}

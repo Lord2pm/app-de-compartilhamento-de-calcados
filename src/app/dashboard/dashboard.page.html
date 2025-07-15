@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-app">
+  <div class="dashboard-header ion-padding">
+    <h1 class="brand">Meio Par 👟</h1>
+    <p class="subtitle">Bem-vindo ao seu painel</p>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card button routerLink="/perfil" class="dashboard-card">
+          <div class="emoji-icon">👤</div>
+          <ion-label>Meu Perfil</ion-label>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card button routerLink="/meus-calcados" class="dashboard-card">
+          <div class="emoji-icon">📦</div>
+          <ion-label>Meus Calçados</ion-label>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card button routerLink="/cadastrar-calcado" class="dashboard-card">
+          <div class="emoji-icon">➕👟</div>
+          <ion-label>Cadastrar Calçado</ion-label>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card button routerLink="/interesses" class="dashboard-card">
+          <div class="emoji-icon">💖</div>
+          <ion-label>Interesses</ion-label>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-card button routerLink="/interesses-recebidos" class="dashboard-card">
+          <div class="emoji-icon">💬</div>
+          <ion-label>Interesses Recebidos</ion-label>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Meu Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-app ion-padding">
+  <div class="perfil-container">
+    <h1 class="brand">Perfil do Usuário</h1>
+
+    <ion-card class="perfil-card">
+      <ion-card-header>
+        <ion-card-title>Informações</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Nome de usuário:</strong> {{ nomeUsuario.toUpperCase() }}</p>
+        <p><strong>E-mail:</strong> {{ usuario?.email }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button
+      class="ion-button"
+      expand="block"
+      shape="round"
+      routerLink="/dashboard"
+    >
+      Voltar ao Dashboard
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Interesses Recebidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-app ion-padding">
+  <h2 class="brand">Pessoas interessadas nos seus calçados</h2>
+
+  <ng-container *ngIf="interesses$ | async as interesses">
+    <p *ngIf="interesses.length === 0" class="empty">
+      Nenhum interesse recebido até agora.
+    </p>
+
+    <ion-card class="shoe-card" *ngFor="let interesse of interesses">
+      <ion-card-header>
+        <ion-card-title>{{ interesse.descricao }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Nº {{ interesse.tamanho }} — Pé {{ interesse.lado }}</p>
+        <p>
+          <strong>Interessado:</strong> {{ interesse.interessadoEmail }}
+        </p>
+        <p class="small">
+          Manifestado em:
+          {{ interesse.manifestadoEm.toDate() | date: 'short' }}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+</ion-content>

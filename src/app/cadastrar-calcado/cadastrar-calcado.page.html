@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cadastrar Calçado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding background-app">
+  <div class="page-header">
+    <h1 class="brand">Meio Par 👟</h1>
+    <h2 class="subtitle">Informe os dados do calçado</h2>
+  </div>
+
+  <form (ngSubmit)="cadastrar()">
+    <ion-item lines="none">
+      <ion-input
+        label="Descrição"
+        placeholder="Ex: Tênis esportivo azul"
+        [(ngModel)]="descricao"
+        name="descricao"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-input
+        label="Tamanho"
+        type="number"
+        placeholder="Ex: 42"
+        [(ngModel)]="tamanho"
+        name="tamanho"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-select
+        label="Lado"
+        placeholder="Escolha um lado"
+        [(ngModel)]="lado"
+        name="lado"
+        required
+      >
+        <ion-select-option value="esquerdo">Esquerdo</ion-select-option>
+        <ion-select-option value="direito">Direito</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" shape="round" type="submit" class="mt-2">
+      Cadastrar
+    </ion-button>
+  </form>
+</ion-content>

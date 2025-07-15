@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary" class="ion-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <h1 class="brand">Meio Par 👟</h1>
+    <h2 class="subtitle">Bem-vindo de volta 👋</h2>
+
+    <div *ngIf="mensagem" [ngClass]="classeMensagem" class="alert-card">
+      {{ mensagem }}
+    </div>
+
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <ion-item lines="none">
+        <ion-input
+          type="email"
+          placeholder="E-mail"
+          [(ngModel)]="email"
+          name="email"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input
+          type="password"
+          placeholder="Senha"
+          [(ngModel)]="senha"
+          name="senha"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-button
+        expand="block"
+        shape="round"
+        type="submit"
+        [disabled]="!loginForm.form.valid"
+      >
+        Entrar
+      </ion-button>
+    </form>
+
+    <p class="description small">
+      Não tem conta?
+      <a (click)="irParaCadastro()">Cadastre-se</a>
+    </p>
+  </div>
+</ion-content>

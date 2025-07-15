@@ -1,0 +1,18 @@
+ion-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  --background: linear-gradient(to bottom, #f0f4f8, #e0e7ff);
+}
+
+ion-toolbar {
+  --background: transparent;
+  --color: var(--cor-primaria);
+  box-shadow: none;
+}
+
+ion-back-button {
+  color: var(--cor-primaria);
+  font-size: 18px;
+}

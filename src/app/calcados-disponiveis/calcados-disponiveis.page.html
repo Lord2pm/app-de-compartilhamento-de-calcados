@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Calçados Disponíveis</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-app">
+  <div class="page-header ion-padding">
+    <h1 class="brand">Meio Par 👟</h1>
+    <p class="subtitle">Encontre calçados compatíveis com você</p>
+  </div>
+
+  <div class="ion-padding">
+    <ng-container *ngIf="calcados$ | async as calcados">
+      <p *ngIf="calcados.length === 0" class="empty">
+        Nenhum calçado cadastrado ainda.
+      </p>
+
+      <ion-card *ngFor="let calcado of calcados" class="shoe-card">
+        <ion-card-header>
+          <ion-card-title> {{ calcado.descricao }} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Descrição: Nº {{ calcado.tamanho }} — Pé {{ calcado.lado }}</p>
+          <ion-button
+            expand="block"
+            shape="round"
+            color="success"
+            fill="solid"
+            (click)="manifestarInteresse(calcado)"
+          >
+            Manifestar Interesse
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  </div>
+</ion-content>

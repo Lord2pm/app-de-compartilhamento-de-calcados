@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Meus Interesses</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-app ion-padding">
+  <h2 class="brand">Calçados de Interesse 👟</h2>
+
+  <ng-container *ngIf="interesses$ | async as interesses">
+    <p *ngIf="interesses.length === 0" class="empty">
+      Você ainda não manifestou interesse em nenhum calçado.
+    </p>
+
+    <ion-card *ngFor="let calcado of interesses" class="shoe-card">
+      <ion-card-header>
+        <ion-card-title>{{ calcado.descricao }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Nº {{ calcado.tamanho }} — Pé {{ calcado.lado }}</p>
+        <p class="small">
+          Manifestado em: {{ calcado.manifestadoEm.toDate() | date: 'short' }}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+</ion-content>
